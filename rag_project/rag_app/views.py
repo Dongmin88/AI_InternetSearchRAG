@@ -41,4 +41,4 @@ def query_llm(request):
         except Exception as e:
             return JsonResponse({'error': f'처리 중 오류가 발생했습니다: {str(e)}'}, status=500)
     
-    return JsonResponse({'error': '잘못된 요청 방식입니다'}, status=400)
+    return JsonResponse({'error': '잘못된 요청 방식입니다.'}, status=400)
