@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
+"""venv/Scripts/activate"""
+"""python manage.py runserver"""
 import os
 import sys
 
