@@ -39,7 +39,14 @@ class RAGSearchLLM:
         # 현재 GPU 이름
         if torch.cuda.is_available():
             print("Current GPU:", torch.cuda.get_device_name(0))
-        
+
+    def __del__(self):
+        """소멸자: 메모리 정리"""
+        del self.model
+        del self.tokenizer
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+            
     def clean_text(self, text: str) -> str:
         """텍스트 정리를 위한 유틸리티 함수"""
         # 불필요한 공백 제거
